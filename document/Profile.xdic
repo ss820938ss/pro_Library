@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<tm:TermDictionary xmlns:tm="http://exerd.com/term-model" version="1.1">
+  <term name="회원번호" description="회원번호" physicalName="P_NO"/>
+  <term name="이름" description="이름, 회원이름" physicalName="P_NAME"/>
+  <term name="생년월일" description="생년월일" physicalName="P_BIRTH"/>
+  <term name="전화번호" description="전화번호" physicalName="P_PHONE"/>
+  <term name="휴대전화" description="휴대전화" physicalName="P_CELLPHONE"/>
+  <term name="주소" description="주소" physicalName="P_ADDRESS"/>
+  <term name="도서번호" description="도서번호" physicalName="B_NO"/>
+  <term name="도서제목" description="도서제목" physicalName="B_NAME"/>
+  <term name="대출여부" description="대출여부" physicalName="B_RENTAL"/>
+  <term name="도서구분" description="도서구분" physicalName="B_DIVISION"/>
+  <term name="도서대여일" description="도서대여일" physicalName="B_R_DATE"/>
+  <term name="도서연체일" description="도서연체일" physicalName="B_OVERDUE"/>
+  <term name="도서반납일" description="도서반납일" physicalName="B_RETURN"/>
+</tm:TermDictionary>
