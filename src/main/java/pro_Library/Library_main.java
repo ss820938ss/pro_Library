@@ -1,17 +1,5 @@
 package pro_Library;
 
-import java.awt.BorderLayout;
-import java.awt.EventQueue;
-import java.io.File;
-
-import javax.swing.ImageIcon;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
-import javax.swing.border.EmptyBorder;
-
-import javax.swing.JFrame;
-
 public class Library_main{
     LoginView loginView;
     TestFrm testFrm;

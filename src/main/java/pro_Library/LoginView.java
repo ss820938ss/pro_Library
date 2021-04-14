@@ -13,12 +13,10 @@ import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 import java.awt.BorderLayout;
-import java.awt.GridLayout;
  
+@SuppressWarnings("serial")
 public class LoginView extends JFrame{
     private Library_main main;
-    private TestFrm testFrm;
-   
     private JButton btnLogin;
     private JButton btnInit;
     private JPasswordField passText;
@@ -54,7 +52,6 @@ public class LoginView extends JFrame{
         lbllogimg = new JLabel("");
         pimg.add(lbllogimg);
         
-        JLabel lblNewLabel = new JLabel("");
         lbllogimg.setIcon(new ImageIcon(imgPath+"lgb.jpg"));
 		pimg.add(lbllogimg);
        
@@ -109,7 +106,7 @@ public class LoginView extends JFrame{
     }
    
     public void isLoginCheck(){
-        if(userText.getText().equals("dosu") && new String(passText.getPassword()).equals("rootroot")){
+        if(userText.getText().equals("book") && new String(passText.getPassword()).equals("rootroot")){
             JOptionPane.showMessageDialog(null, "로그인 되었습니다.");
             bLoginCheck = true;
            
