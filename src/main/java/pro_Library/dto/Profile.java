@@ -9,9 +9,6 @@ public class Profile {
 	private String pPhone;
 	private String pCellphone;
 	private String pAddress;
-
-	public Profile() {
-	}
 	
 	public Profile(int pNo, String pName, Date pBirth, String pPhone, String pCellphone, String pAddress) {
 		this.pNo = pNo;
@@ -20,6 +17,10 @@ public class Profile {
 		this.pPhone = pPhone;
 		this.pCellphone = pCellphone;
 		this.pAddress = pAddress;
+	}
+
+	public Profile(int pNo2, String pName2, Date pBirth2, Profile profile, Profile profile2, Profile profile3) {
+		// TODO Auto-generated constructor stub
 	}
 
 	public int getpNo() {
