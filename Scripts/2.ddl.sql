@@ -48,6 +48,21 @@ CREATE TABLE library.RENTAL_RETURN (
 )
 COMMENT '대출/반납';
 
+-- 도서등록
+CREATE TABLE library.BookRegister (
+	B_NO       INT(5)      NOT NULL COMMENT '도서번호', -- 도서번호
+	B_NAME     VARCHAR(40) NULL     COMMENT '도서제목', -- 도서제목
+	B_DIVISION VARCHAR(4)  NULL     COMMENT '도서구분' -- 도서구분
+)
+COMMENT '도서등록';
+
+-- 도서등록
+ALTER TABLE library.BookRegister
+	ADD CONSTRAINT PK_BookRegister -- 도서등록 기본키
+		PRIMARY KEY (
+			B_NO -- 도서번호
+		);
+
 -- 대출/반납
 ALTER TABLE library.RENTAL_RETURN
 	ADD CONSTRAINT FK_Book_Information_TO_RENTAL_RETURN -- 도서정보 -> 대출/반납
@@ -67,3 +82,14 @@ ALTER TABLE library.RENTAL_RETURN
 		REFERENCES library.Profile ( -- 회원정보
 			P_NO -- 회원번호
 		);
+		
+-- 도서등록
+ALTER TABLE library.BookRegister
+	ADD CONSTRAINT FK_Book_Information_TO_BookRegister -- 도서정보 -> 도서등록
+		FOREIGN KEY (
+			B_NO -- 도서번호
+		)
+		REFERENCES library.Book_Information ( -- 도서정보
+			B_NO -- 도서번호
+		);
+		

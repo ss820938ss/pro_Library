@@ -6,6 +6,8 @@ import java.awt.BorderLayout;
 import javax.swing.JPanel;
 import java.awt.GridLayout;
 import pro_Library.panel.BookInformationPanel;
+import pro_Library.panel.ProfilePanel;
+import pro_Library.control.ProfileManagement;
 
 @SuppressWarnings("serial")
 public class TestFrm extends JFrame{
@@ -14,7 +16,7 @@ public class TestFrm extends JFrame{
         setSize(800, 600);
         
         JTabbedPane tabbedPane = new JTabbedPane(JTabbedPane.TOP);
-        getContentPane().add(tabbedPane, BorderLayout.NORTH);
+        getContentPane().add(tabbedPane, BorderLayout.CENTER);
         
         JPanel ptab1 = new JPanel();
         tabbedPane.addTab("도서검색", null, ptab1, null);
@@ -34,8 +36,9 @@ public class TestFrm extends JFrame{
         tabbedPane.addTab("회원관리", null, ptab3, null);
         ptab3.setLayout(new GridLayout(0, 1, 0, 0));
         
-        JPanel ptab3_1 = new JPanel();
+        ProfileManagement ptab3_1 = new ProfileManagement();
         ptab3.add(ptab3_1);
+        ptab3_1.setLayout(new GridLayout(1, 0, 0, 0));
         
         JPanel ptab4 = new JPanel();
         tabbedPane.addTab("도서관리", null, ptab4, null);
