@@ -1,16 +1,14 @@
 package pro_Library.dto;
 
-import java.util.Date;
-
 public class Profile {
 	private int pNo;
 	private String pName;
-	private Date pBirth;
+	private String pBirth;
 	private String pPhone;
 	private String pCellphone;
 	private String pAddress;
 	
-	public Profile(int pNo, String pName, Date pBirth, String pPhone, String pCellphone, String pAddress) {
+	public Profile(int pNo, String pName, String pBirth, String pPhone, String pCellphone, String pAddress) {
 		this.pNo = pNo;
 		this.pName = pName;
 		this.pBirth = pBirth;
@@ -19,7 +17,7 @@ public class Profile {
 		this.pAddress = pAddress;
 	}
 
-	public Profile(int pNo2, String pName2, Date pBirth2, Profile profile, Profile profile2, Profile profile3) {
+	public Profile(int pNo2) {
 		// TODO Auto-generated constructor stub
 	}
 
@@ -39,11 +37,11 @@ public class Profile {
 		this.pName = pName;
 	}
 
-	public Date getpBirth() {
+	public String getpBirth() {
 		return pBirth;
 	}
 
-	public void setpBirth(Date pBirth) {
+	public void setpBirth(String pBirth) {
 		this.pBirth = pBirth;
 	}
 
@@ -84,44 +82,44 @@ public class Profile {
 		return result;
 	}
 
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		Profile other = (Profile) obj;
-		if (pAddress == null) {
-			if (other.pAddress != null)
-				return false;
-		} else if (!pAddress.equals(other.pAddress))
-			return false;
-		if (pBirth == null) {
-			if (other.pBirth != null)
-				return false;
-		} else if (!pBirth.equals(other.pBirth))
-			return false;
-		if (pCellphone == null) {
-			if (other.pCellphone != null)
-				return false;
-		} else if (!pCellphone.equals(other.pCellphone))
-			return false;
-		if (pName == null) {
-			if (other.pName != null)
-				return false;
-		} else if (!pName.equals(other.pName))
-			return false;
-		if (pNo != other.pNo)
-			return false;
-		if (pPhone == null) {
-			if (other.pPhone != null)
-				return false;
-		} else if (!pPhone.equals(other.pPhone))
-			return false;
-		return true;
-	}
+//	@Override
+//	public boolean equals(Object obj) {
+//		if (this == obj)
+//			return true;
+//		if (obj == null)
+//			return false;
+//		if (getClass() != obj.getClass())
+//			return false;
+//		Profile other = (Profile) obj;
+//		if (pAddress == null) {
+//			if (other.pAddress != null)
+//				return false;
+//		} else if (!pAddress.equals(other.pAddress))
+//			return false;
+//		if (pBirth == null) {
+//			if (other.pBirth != null)
+//				return false;
+//		} else if (!pBirth.equals(other.pBirth))
+//			return false;
+//		if (pCellphone == null) {
+//			if (other.pCellphone != null)
+//				return false;
+//		} else if (!pCellphone.equals(other.pCellphone))
+//			return false;
+//		if (pName == null) {
+//			if (other.pName != null)
+//				return false;
+//		} else if (!pName.equals(other.pName))
+//			return false;
+//		if (pNo != other.pNo)
+//			return false;
+//		if (pPhone == null) {
+//			if (other.pPhone != null)
+//				return false;
+//		} else if (!pPhone.equals(other.pPhone))
+//			return false;
+//		return true;
+//	}
 
 	@Override
 	public String toString() {

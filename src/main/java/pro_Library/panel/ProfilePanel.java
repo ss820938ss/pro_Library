@@ -131,11 +131,7 @@ public class ProfilePanel extends JPanel {
 			throw new EmptyTfException();
 		}
 		String pName = protf_no.getText().trim();
-
-		Date pBirth = new Date();
-		SimpleDateFormat transFormat = new SimpleDateFormat("yyyy-MM-dd");
-		String to = transFormat.format(pBirth);
-
+		String pBirth = protf_birth.getText().trim();
 		String pPhone = protf_phone.getText().trim();
 		String pCellphone = protf_tel.getText().trim();
 		String pAddress = protf_address.getText().trim();
