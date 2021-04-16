@@ -5,18 +5,22 @@ import java.util.Date;
 public class RentalReturn {
 	private int pNo;
 	private int bNo;
-	private Date brDate;
-	private Date bReturn;
-	private Date bOverdue;
+	private java.sql.Date brDate;
+	private java.sql.Date bReturn;
+	private java.sql.Date bOverdue;
 	
-	public RentalReturn() {}
+	public RentalReturn(int pNo2, int bNo2, Date brDate2, Date bReturn2, Date bOverdue2) {}
 
-	public RentalReturn(int pNo, int bNo, Date brDate, Date bReturn, Date bOverdue) {
+	public RentalReturn(int pNo, int bNo, java.sql.Date brDate, java.sql.Date bReturn, java.sql.Date bOverdue) {
 		this.pNo = pNo;
 		this.bNo = bNo;
 		this.brDate = brDate;
 		this.bReturn = bReturn;
 		this.bOverdue = bOverdue;
+	}
+
+	public RentalReturn(int i) {
+		// TODO Auto-generated constructor stub
 	}
 
 	public int getpNo() {
@@ -35,27 +39,27 @@ public class RentalReturn {
 		this.bNo = bNo;
 	}
 
-	public Date getBrDate() {
+	public java.sql.Date getBrDate() {
 		return brDate;
 	}
 
-	public void setBrDate(Date brDate) {
+	public void setBrDate(java.sql.Date brDate) {
 		this.brDate = brDate;
 	}
 
-	public Date getbReturn() {
+	public java.sql.Date getbReturn() {
 		return bReturn;
 	}
 
-	public void setbReturn(Date bReturn) {
+	public void setbReturn(java.sql.Date bReturn) {
 		this.bReturn = bReturn;
 	}
 
-	public Date getbOverdue() {
+	public java.sql.Date getbOverdue() {
 		return bOverdue;
 	}
 
-	public void setbOverdue(Date bOverdue) {
+	public void setbOverdue(java.sql.Date bOverdue) {
 		this.bOverdue = bOverdue;
 	}
 

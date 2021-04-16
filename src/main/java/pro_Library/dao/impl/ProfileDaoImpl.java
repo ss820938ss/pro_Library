@@ -52,7 +52,8 @@ public class ProfileDaoImpl implements ProfileDao {
 	@Override
 	public Profile selectProfileByNo(Profile profile) {
 		String sql = "select P_NO, P_NAME, P_BIRTH, P_PHONE, P_CELLPHONE, P_ADDRESS" + " from Profile where P_NO = ?";
-		try (Connection con = JdbcConn.getConnection(); PreparedStatement pstmt = con.prepareStatement(sql)) {
+		try (Connection con = JdbcConn.getConnection(); 
+				PreparedStatement pstmt = con.prepareStatement(sql)) {
 			pstmt.setInt(1, profile.getpNo());
 			try (ResultSet rs = pstmt.executeQuery()) {
 				if (rs.next()) {
@@ -68,7 +69,8 @@ public class ProfileDaoImpl implements ProfileDao {
 	@Override
 	public int insertProfile(Profile profile) {
 		String sql = "insert into Profile values (?, ?, ?, ?, ?, ?)";
-		try (Connection con = JdbcConn.getConnection(); PreparedStatement pstmt = con.prepareStatement(sql)) {
+		try (Connection con = JdbcConn.getConnection(); 
+				PreparedStatement pstmt = con.prepareStatement(sql)) {
 			pstmt.setInt(1, profile.getpNo());
 			pstmt.setString(2, profile.getpName());
 			pstmt.setString(3, profile.getpBirth());
@@ -108,7 +110,8 @@ public class ProfileDaoImpl implements ProfileDao {
 	@Override
 	public int deleteProfile(int pNo) {
 		String sql = "delete from Profile where P_NO = ?";
-		try (Connection con = JdbcConn.getConnection(); PreparedStatement pstmt = con.prepareStatement(sql)) {
+		try (Connection con = JdbcConn.getConnection(); 
+				PreparedStatement pstmt = con.prepareStatement(sql)) {
 			pstmt.setInt(1, pNo);
 			return pstmt.executeUpdate();
 		} catch (SQLException e) {

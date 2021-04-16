@@ -1,22 +1,30 @@
 package pro_Library.dto;
 
 public class BookInformation {
-	private int bNo;
-	private String bName;
-	private String bDivision;
-	private String bRental;
+	private static int bNo;
+	private static String bName;
+	private static String bDivision;
+	private static String bRental;
 
 	public BookInformation() {
 	}
 
-	public BookInformation(int bNo, String bName, String bDivision, String bRental) {
+	public BookInformation(int bNo, String bName, String bDivision) {
 		this.bNo = bNo;
 		this.bName = bName;
 		this.bDivision = bDivision;
 		this.bRental = bRental;
 	}
 
-	public int getbNo() {
+	public BookInformation(int i, String string, String string2, Object object) {
+		// TODO Auto-generated constructor stub
+	}
+
+	public BookInformation(int i) {
+		// TODO Auto-generated constructor stub
+	}
+
+	public static int getbNo() {
 		return bNo;
 	}
 
@@ -24,7 +32,7 @@ public class BookInformation {
 		this.bNo = bNo;
 	}
 
-	public String getbName() {
+	public static String getbName() {
 		return bName;
 	}
 
@@ -32,7 +40,7 @@ public class BookInformation {
 		this.bName = bName;
 	}
 
-	public String getbDivision() {
+	public static String getbDivision() {
 		return bDivision;
 	}
 
@@ -40,7 +48,7 @@ public class BookInformation {
 		this.bDivision = bDivision;
 	}
 
-	public String getbRental() {
+	public static String getbRental() {
 		return bRental;
 	}
 

@@ -15,6 +15,10 @@ public class BookRegister {
 		this.bDivision = bDivision;
 	}
 
+	public BookRegister(int i) {
+		// TODO Auto-generated constructor stub
+	}
+
 	public int getbNo() {
 		return bNo;
 	}
