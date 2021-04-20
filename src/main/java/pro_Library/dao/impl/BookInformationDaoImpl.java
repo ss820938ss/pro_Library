@@ -51,7 +51,7 @@ public class BookInformationDaoImpl implements BookInformationDao {
 		String sql = "select B_NO, B_NAME, B_DIVISION, B_RENTAL" + "from book_information where B_NO = ?";
 		try (Connection con = JdbcConn.getConnection();
 				PreparedStatement pstmt = con.prepareStatement(sql)) {
-			pstmt.setInt(1, BookInformation.getbNo());
+			pstmt.setInt(1, bookinformation.getbNo());
 			try (ResultSet rs = pstmt.executeQuery()) {
 				if (rs.next()) {
 					return getBookInformation(rs);
@@ -68,10 +68,10 @@ public class BookInformationDaoImpl implements BookInformationDao {
 		String sql = "insert into Book_Information values (?, ?, ?, ?)";
 		try (Connection con = JdbcConn.getConnection();
 				PreparedStatement pstmt = con.prepareStatement(sql)) {
-			pstmt.setInt(1, BookInformation.getbNo());
-			pstmt.setString(2, BookInformation.getbName());
-			pstmt.setString(3, BookInformation.getbDivision());
-			pstmt.setString(4, BookInformation.getbRental());
+			pstmt.setInt(1, bookinformation.getbNo());
+			pstmt.setString(2, bookinformation.getbName());
+			pstmt.setString(3, bookinformation.getbDivision());
+			pstmt.setString(4, bookinformation.getbRental());
 			
 			return pstmt.executeUpdate();			
 		} catch (SQLException e) {
@@ -86,10 +86,10 @@ public class BookInformationDaoImpl implements BookInformationDao {
 					 "set B_NO = ?, B_NAME = ?, B_DIVISION = ?, B_RENTAL = ? where B_NO = ?";
 		try (Connection con = JdbcConn.getConnection();
 				PreparedStatement pstmt = con.prepareStatement(sql)) {
-			pstmt.setInt(1, BookInformation.getbNo());
-			pstmt.setString(2, BookInformation.getbName());
-			pstmt.setString(3, BookInformation.getbDivision());
-			pstmt.setString(4, BookInformation.getbRental());
+			pstmt.setInt(1, bookinformation.getbNo());
+			pstmt.setString(2, bookinformation.getbName());
+			pstmt.setString(3, bookinformation.getbDivision());
+			pstmt.setString(4, bookinformation.getbRental());
 			
 			return pstmt.executeUpdate();
 		} catch (SQLException e) {

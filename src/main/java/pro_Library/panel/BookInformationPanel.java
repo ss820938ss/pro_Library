@@ -13,10 +13,10 @@ import javax.swing.SwingConstants;
 import javax.swing.JButton;
 import javax.swing.JTable;
 import java.awt.FlowLayout;
+import pro_Library.content.BookInformationTablePanel;
 
 @SuppressWarnings("serial")
 public class BookInformationPanel extends JPanel {
-	private JTable table;
 	private JTextField textField;
 
 	public BookInformationPanel() {
@@ -30,9 +30,6 @@ public class BookInformationPanel extends JPanel {
 		JComboBox comboBox = new JComboBox();
 		comboBox.setModel(new DefaultComboBoxModel(new String[] {"도서제목", "도서번호", "도서구분", "대출여부"}));
 		panel.add(comboBox);
-		
-		JLabel lblNewLabel = new JLabel("   ");
-		panel.add(lblNewLabel);
 		
 		JLabel lblNewLabel_1 = new JLabel("검색어");
 		lblNewLabel_1.setHorizontalAlignment(SwingConstants.CENTER);
@@ -49,18 +46,8 @@ public class BookInformationPanel extends JPanel {
 		add(panel_1, BorderLayout.CENTER);
 		panel_1.setLayout(new GridLayout(0, 1, 0, 0));
 		
-		table = new JTable();
-		panel_1.add(table);
-		
-		JPanel panel_2 = new JPanel();
-		add(panel_2, BorderLayout.SOUTH);
-		panel_2.setLayout(new GridLayout(1, 0, 0, 0));
-		
-		JPanel panel_3 = new JPanel();
-		panel_2.add(panel_3);
-		
-		JPanel panel_4 = new JPanel();
-		panel_2.add(panel_4);
+		BookInformationTablePanel panel_5 = new BookInformationTablePanel();
+		panel_1.add(panel_5);
 
 	}
 

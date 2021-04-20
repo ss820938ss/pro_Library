@@ -8,6 +8,10 @@ import java.awt.GridLayout;
 import pro_Library.panel.BookInformationPanel;
 import pro_Library.panel.ProfilePanel;
 import pro_Library.control.ProfileManagement;
+import javax.swing.JTable;
+import javax.swing.JComboBox;
+import javax.swing.JScrollPane;
+import pro_Library.content.BookInformationTablePanel;
 
 @SuppressWarnings("serial")
 public class TestFrm extends JFrame{
@@ -22,29 +26,26 @@ public class TestFrm extends JFrame{
         tabbedPane.addTab("도서검색", null, ptab1, null);
         ptab1.setLayout(new GridLayout(0, 1, 0, 0));
         
-        BookInformationPanel ptab1_1 = new BookInformationPanel();
-        ptab1.add(ptab1_1);
+        JPanel panel = new JPanel();
+        ptab1.add(panel);
+        panel.setLayout(new BorderLayout(0, 0));
+        
+        JPanel panel_1 = new JPanel();
+        panel.add(panel_1, BorderLayout.NORTH);
+        
+        BookInformationTablePanel panel_2 = new BookInformationTablePanel();
+        panel.add(panel_2, BorderLayout.CENTER);
         
         JPanel ptab2 = new JPanel();
         tabbedPane.addTab("대출/반납", null, ptab2, null);
         ptab2.setLayout(new GridLayout(0, 1, 0, 0));
         
-        JPanel ptab2_1 = new JPanel();
-        ptab2.add(ptab2_1);
-        
         JPanel ptab3 = new JPanel();
         tabbedPane.addTab("회원관리", null, ptab3, null);
         ptab3.setLayout(new GridLayout(0, 1, 0, 0));
         
-        ProfileManagement ptab3_1 = new ProfileManagement();
-        ptab3.add(ptab3_1);
-        ptab3_1.setLayout(new GridLayout(1, 0, 0, 0));
-        
         JPanel ptab4 = new JPanel();
         tabbedPane.addTab("도서관리", null, ptab4, null);
-        
-        JPanel ptab4_1 = new JPanel();
-        ptab4.add(ptab4_1);
         setVisible(true);
     }
 }
