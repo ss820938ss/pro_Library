@@ -58,7 +58,7 @@ public class BookInformationTablePanel<T> extends JPanel {
 	}
 
 	public Object[][] getData() {
-		return new Object[][] { { null, null, null, null }, };
+		return new Object[][] { {null , null, null, null }, };
 	}
 
 	public String[] getColumnNames() {
@@ -102,12 +102,12 @@ public class BookInformationTablePanel<T> extends JPanel {
 
 	}
 
-	private Object[] toArray(BookInformation bookInformation) {
+	private Object[] toArray(BookInformation bookinfo) {
 		Object[] row = new Object[] { 
-				bookInformation.getbNo(), 
-				bookInformation.getbName(),
-				bookInformation.getbDivision(), 
-				bookInformation.getbRental() 
+				bookinfo.getbNo(), 
+				bookinfo.getbName(),
+				bookinfo.getbDivision(), 
+				bookinfo.getbRental() 
 			};
 		return row;
 	}
