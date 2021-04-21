@@ -78,7 +78,7 @@ public class BookInformationTablePanel<T> extends JPanel {
 		setTableCellAlign(SwingConstants.CENTER, 0, 1, 2);
 
 		// 컬럼별 너비 조정
-		setTableCellWidth(100, 250, 100);
+		setTableCellWidth(100, 300, 100, 100);
 	}
 
 	private void setTableCellWidth(int... width) {

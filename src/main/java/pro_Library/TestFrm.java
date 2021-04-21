@@ -30,11 +30,8 @@ public class TestFrm extends JFrame{
         ptab1.add(panel);
         panel.setLayout(new BorderLayout(0, 0));
         
-        JPanel panel_1 = new JPanel();
+        BookInformationPanel panel_1 = new BookInformationPanel();
         panel.add(panel_1, BorderLayout.NORTH);
-        
-        BookInformationTablePanel panel_2 = new BookInformationTablePanel();
-        panel.add(panel_2, BorderLayout.CENTER);
         
         JPanel ptab2 = new JPanel();
         tabbedPane.addTab("대출/반납", null, ptab2, null);

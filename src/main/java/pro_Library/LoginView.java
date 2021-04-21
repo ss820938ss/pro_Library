@@ -106,7 +106,7 @@ public class LoginView extends JFrame{
     }
    
     public void isLoginCheck(){
-        if(userText.getText().equals("book") && new String(passText.getPassword()).equals("rootroot")){
+        if(userText.getText().equals("book") && new String(passText.getPassword()).equals("1234")){
             JOptionPane.showMessageDialog(null, "로그인 되었습니다.");
             bLoginCheck = true;
            
