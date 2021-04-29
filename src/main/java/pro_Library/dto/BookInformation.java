@@ -6,9 +6,6 @@ public class BookInformation {
 	private String bDivision;
 	private String bRental;
 
-	public BookInformation() {
-	}
-
 	public BookInformation(int bNo, String bName, String bDivision, String bRental) {
 		this.bNo = bNo;
 		this.bName = bName;
@@ -16,13 +13,15 @@ public class BookInformation {
 		this.bRental = bRental;
 	}
 
-	public BookInformation(int i, String string, String string2, Object object) {
+	public BookInformation(int bNo2) {
 		// TODO Auto-generated constructor stub
 	}
 
-	public BookInformation(int i) {
-		// TODO Auto-generated constructor stub
+	
+	public BookInformation(String string) { 
+		
 	}
+
 
 	public int getbNo() {
 		return bNo;
@@ -98,9 +97,9 @@ public class BookInformation {
 
 	@Override
 	public String toString() {
-		return String.format("Book_Information [bNo=%s, bName=%s, bDivision=%s, bRental=%s]", 
-							  bNo, bName, bDivision, bRental);
-				
+		return String.format("Book_Information [bNo=%s, bName=%s, bDivision=%s, bRental=%s]", bNo, bName, bDivision,
+				bRental);
+
 	}
 
 }

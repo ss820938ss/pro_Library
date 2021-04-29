@@ -20,14 +20,85 @@ insert into profile(P_NO, P_NAME, P_BIRTH, P_PHONE, P_CELLPHONE, P_ADDRESS) valu
 -- 도서정보 입력데이터
 select * from Book_Information;
 
-insert into Book_Information(B_NO, B_NAME, B_DIVISION) values
-	(40001, 'The elements of statistical learning', '수학'),
-	(40002, 'Computer vision : a modern approach', '컴퓨터'),
-	(40003, 'MATLAB for engineers', '전자'),
-	(40004, 'CUBA by example', '수학'),
-	(40005, 'An introduction to 3D computer vision', '컴퓨터'),
-	(40006, 'Numerical methoods', '수학'),
-	(40007, 'Image-based modeling', '컴퓨터'),
-	(40008, 'Machine learning', '컴퓨터'),
-	(40009, 'Probabilistic robotics', '통계'),
-	(40010, 'Pattern recognition and machine learning', '컴퓨터');
+insert into Book_Information(B_NO, B_NAME, B_DIVISION, B_RENTAL) values
+	(40001, 'The elements of statistical learning', '수학', null),
+	(40002, 'Computer vision : a modern approach', '컴퓨터', null),
+	(40003, 'MATLAB for engineers', '전자', null),
+	(40004, 'CUBA by example', '수학', null),
+	(40005, 'An introduction to 3D computer vision', '컴퓨터', null),
+	(40006, 'Numerical methoods', '수학', null),
+	(40007, 'Image-based modeling', '컴퓨터', null),
+	(40008, 'Machine learning', '컴퓨터', null),
+	(40009, 'Probabilistic robotics', '통계', null),
+	(40010, 'Pattern recognition and machine learning', '컴퓨터', null),
+	(40011, 'The elements of statistical learning', '수학', null),
+	(40012, 'Computer vision : a modern approach', '컴퓨터', null),
+	(40013, 'MATLAB for engineers', '전자', null),
+	(40014, 'CUBA by example', '수학', null),
+	(40015, 'An introduction to 3D computer vision', '컴퓨터', null),
+	(40016, 'Numerical methoods', '수학', null),
+	(40017, 'Image-based modeling', '컴퓨터', null),
+	(40018, 'Machine learning', '컴퓨터', null),
+	(40019, 'Probabilistic robotics', '통계', null),
+	(40020, 'Pattern recognition and machine learning', '컴퓨터', null),
+	(40021, 'The elements of statistical learning', '수학', null),
+	(40022, 'Computer vision : a modern approach', '컴퓨터', null),
+	(40023, 'MATLAB for engineers', '전자', null),
+	(40024, 'CUBA by example', '수학', null),
+	(40025, 'An introduction to 3D computer vision', '컴퓨터', null),
+	(40026, 'Numerical methoods', '수학', null),
+	(40027, 'Image-based modeling', '컴퓨터', null),
+	(40028, 'Machine learning', '컴퓨터', null),
+	(40029, 'Probabilistic robotics', '통계', null),
+	(40030, 'Pattern recognition and machine learning', '컴퓨터', null);
+	
+-- 회원계정 입력데이터
+select * from pro_library.memberp;
+
+insert into Memberp(P_NO, M_ID, M_PASS) values
+	(12001, 'member1', password('1234')),
+	(12002, 'member2', password('1234')),
+	(12003, 'member3', password('1234')),
+	(12004, 'member4', password('1234')),
+	(12005, 'member5', password('1234')),
+	(12006, 'member6', password('1234')),
+	(12007, 'member7', password('1234')),
+	(12008, 'member8', password('1234')),
+	(12009, 'member9', password('1234')),
+	(12010, 'member10', password('1234')),
+	(12011, 'member11', password('1234'));
+			   
+-- 도서기본정보
+select * from pro_Library.Book_Dinfo;
+
+insert into Book_Dinfo(B_NO, B_NAME, B_DIVISION, B_IMG) values
+	(40001, 'The elements of statistical learning', '수학', 'image/b1.jpg'),
+	(40002, 'Computer vision : a modern approach', '컴퓨터', 'image/b2.jpg'),
+	(40003, 'MATLAB for engineers', '전자', 'image/b3.jpg'),
+	(40004, 'CUBA by example', '수학', 'image/b4.jpg'),
+	(40005, 'An introduction to 3D computer vision', '컴퓨터', 'image/b5.jpg'),
+	(40006, 'Numerical methoods', '수학', 'image/b6.jpg'),
+	(40007, 'Image-based modeling', '컴퓨터', 'image/b7.jpg'),
+	(40008, 'Machine learning', '컴퓨터', 'image/b8.jpg'),
+	(40009, 'Probabilistic robotics', '통계', 'image/b9.jpg'),
+	(40010, 'Pattern recognition and machine learning', '컴퓨터', 'image/b10.jpg'),
+	(40011, 'The elements of statistical learning', '수학', 'image/b1.jpg'),
+	(40012, 'Computer vision : a modern approach', '컴퓨터', 'image/b2.jpg'),
+	(40013, 'MATLAB for engineers', '전자', 'image/b3.jpg'),
+	(40014, 'CUBA by example', '수학', 'image/b4.jpg'),
+	(40015, 'An introduction to 3D computer vision', '컴퓨터', 'image/b5.jpg'),
+	(40016, 'Numerical methoods', '수학', 'image/b6.jpg'),
+	(40017, 'Image-based modeling', '컴퓨터', 'image/b7.jpg'),
+	(40018, 'Machine learning', '컴퓨터', 'image/b8.jpg'),
+	(40019, 'Probabilistic robotics', '통계', 'image/b9.jpg'),
+	(40020, 'Pattern recognition and machine learning', '컴퓨터', 'image/b10.jpg'),
+	(40021, 'The elements of statistical learning', '수학', 'image/b1.jpg'),
+	(40022, 'Computer vision : a modern approach', '컴퓨터', 'image/b2.jpg'),
+	(40023, 'MATLAB for engineers', '전자', 'image/b3.jpg'),
+	(40024, 'CUBA by example', '수학', 'image/b4.jpg'),
+	(40025, 'An introduction to 3D computer vision', '컴퓨터', 'image/b5.jpg'),
+	(40026, 'Numerical methoods', '수학', 'image/b6.jpg'),
+	(40027, 'Image-based modeling', '컴퓨터', 'image/b7.jpg'),
+	(40028, 'Machine learning', '컴퓨터', 'image/b8.jpg'),
+	(40029, 'Probabilistic robotics', '통계', 'image/b9.jpg'),
+	(40030, 'Pattern recognition and machine learning', '컴퓨터', 'image/b10.jpg');

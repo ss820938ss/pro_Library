@@ -13,4 +13,6 @@
   <term name="도서대여일" description="도서대여일" physicalName="B_R_DATE"/>
   <term name="도서연체일" description="도서연체일" physicalName="B_OVERDUE"/>
   <term name="도서반납일" description="도서반납일" physicalName="B_RETURN"/>
+  <term name="회원ID" description="회원아이디" physicalName="M_ID"/>
+  <term name="회원PASS" description="회원비밀번호" physicalName="M_PASS"/>
 </tm:TermDictionary>

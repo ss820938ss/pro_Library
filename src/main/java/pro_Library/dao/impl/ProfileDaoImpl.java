@@ -5,12 +5,12 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 import pro_Library.dao.ProfileDao;
 import pro_Library.database.JdbcConn;
 import pro_Library.dto.Profile;
+import pro_Library.ui.exception.SqlConstraintException;
 
 public class ProfileDaoImpl implements ProfileDao {
 	private static ProfileDaoImpl instance = new ProfileDaoImpl();
@@ -18,6 +18,8 @@ public class ProfileDaoImpl implements ProfileDao {
 	public static ProfileDaoImpl getInstance() {
 		return instance;
 	}
+	
+	private ProfileDaoImpl() {}
 
 	@Override
 	public List<Profile> selectProfileByAll() {
@@ -51,7 +53,16 @@ public class ProfileDaoImpl implements ProfileDao {
 
 	@Override
 	public Profile selectProfileByNo(Profile profile) {
-		String sql = "select P_NO, P_NAME, P_BIRTH, P_PHONE, P_CELLPHONE, P_ADDRESS" + " from Profile where P_NO = ?";
+		String sql = "create or replace view vw_pro_Library_mem as" + 
+					 "select P.P_NO" + 
+					 "     , P.P_NAME" + 
+					 "     , P.P_BIRTH" + 
+					 "     , P.P_PHONE" + 
+					 "     , P.P_CELLPHONE" + 
+					 "     , P.P_ADDRESS" + 
+					 "     , M.M_ID" + 
+					 " from Profile p " + 
+					 " join memberp m on p.P_NO = m.P_NO";
 		try (Connection con = JdbcConn.getConnection(); 
 				PreparedStatement pstmt = con.prepareStatement(sql)) {
 			pstmt.setInt(1, profile.getpNo());
@@ -68,7 +79,7 @@ public class ProfileDaoImpl implements ProfileDao {
 
 	@Override
 	public int insertProfile(Profile profile) {
-		String sql = "insert into Profile values (?, ?, ?, ?, ?, ?)";
+		String sql = "insert into Profile values(?, ?, ?, ?, ?, ?)";
 		try (Connection con = JdbcConn.getConnection(); 
 				PreparedStatement pstmt = con.prepareStatement(sql)) {
 			pstmt.setInt(1, profile.getpNo());
@@ -80,15 +91,13 @@ public class ProfileDaoImpl implements ProfileDao {
 
 			return pstmt.executeUpdate();
 		} catch (SQLException e) {
-			e.printStackTrace();
+			throw new SqlConstraintException(e.getMessage(), e);
 		}
-		return 0;
 	}
 
 	@Override
 	public int updateProfile(Profile profile) {
-		String sql = "update Profile"
-				+ "set P_NO = ?, P_NAME = ?, P_BIRTH = ?, P_PHONE = ?, P_CELLPHONE = ?, P_ADDRESS = ? where P_NO = ?";
+		String sql = "update Profile set P_NO = ?, P_NAME = ?, P_BIRTH = ?, P_PHONE = ?, P_CELLPHONE = ?, P_ADDRESS = ? where P_NO = ?";
 		try (Connection con = JdbcConn.getConnection(); 
 				PreparedStatement pstmt = con.prepareStatement(sql)) {
 
@@ -115,9 +124,8 @@ public class ProfileDaoImpl implements ProfileDao {
 			pstmt.setInt(1, pNo);
 			return pstmt.executeUpdate();
 		} catch (SQLException e) {
-			e.printStackTrace();
+			throw new SqlConstraintException(e);
 		}
-		return 0;
 	}
 
 }

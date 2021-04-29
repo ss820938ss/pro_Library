@@ -13,6 +13,8 @@ import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 import java.awt.BorderLayout;
+import java.awt.GridLayout;
+import java.awt.FlowLayout;
  
 @SuppressWarnings("serial")
 public class LoginView extends JFrame{
@@ -22,6 +24,9 @@ public class LoginView extends JFrame{
     private JPasswordField passText;
     private JTextField userText;
     private boolean bLoginCheck;
+    
+    private Main_guest mg;
+    private JButton btnNewButton;
    
 	private String imgPath = System.getProperty("user.dir") + File.separator + "images" + File.separator;
 	private JLabel lbllogimg;
@@ -33,7 +38,7 @@ public class LoginView extends JFrame{
     public LoginView() {
         // setting
         setTitle("도서관리 프로그램");
-        setSize(490, 160);
+        setSize(540, 160);
         setResizable(false);
         setLocation(800, 450);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -45,6 +50,22 @@ public class LoginView extends JFrame{
        
         // add
         getContentPane().add(panel, BorderLayout.CENTER);
+        
+        btnNewButton = new JButton("GUEST");
+        btnNewButton.addActionListener(new ActionListener() {
+        	public void actionPerformed(ActionEvent e) {
+        		if (e.getSource() == btnNewButton) {
+        			actionPerformedButton1(e);
+        		}
+        	}
+
+			private void actionPerformedButton1(ActionEvent e) {
+				Main_guest mg = new Main_guest();
+				mg.setVisible(true);
+			}
+        });
+        btnNewButton.setBounds(211, 80, 100, 25);
+        panel.add(btnNewButton);
         
         JPanel pimg = new JPanel();
         getContentPane().add(pimg, BorderLayout.WEST);
@@ -59,7 +80,9 @@ public class LoginView extends JFrame{
         setVisible(true);
     }
    
-    public void placeLoginPanel(JPanel panel){
+  
+
+	public void placeLoginPanel(JPanel panel){
         panel.setLayout(null);     
         JLabel userLabel = new JLabel("Login ID");
         userLabel.setBounds(10, 10, 80, 25);
@@ -95,7 +118,7 @@ public class LoginView extends JFrame{
         });
        
         btnLogin = new JButton("Login");
-        btnLogin.setBounds(160, 80, 100, 25);
+        btnLogin.setBounds(110, 80, 100, 25);
         panel.add(btnLogin);
         btnLogin.addActionListener(new ActionListener() {
             @Override
@@ -104,9 +127,9 @@ public class LoginView extends JFrame{
             }
         });
     }
-   
+	
     public void isLoginCheck(){
-        if(userText.getText().equals("book") && new String(passText.getPassword()).equals("1234")){
+        if(userText.getText().equals("admin") && new String(passText.getPassword()).equals("1234")) {
             JOptionPane.showMessageDialog(null, "로그인 되었습니다.");
             bLoginCheck = true;
            

@@ -10,7 +10,7 @@ import pro_Library.dao.impl.BookInformationDaoImpl;
 import pro_Library.dto.BookInformation;
 
 public class BookInformationDaoTest {
-	private static BookInformationDao dao = BookInformationDaoImpl.GetInstance();
+	private static BookInformationDao dao = BookInformationDaoImpl.getInstance();
 	
 	@After
 	public void tearDown() throws Exception {
