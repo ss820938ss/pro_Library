@@ -25,7 +25,7 @@ import javax.swing.JButton;
 import java.awt.BorderLayout;
 
 @SuppressWarnings("serial")
-public class BookDeinfoContentPanel extends AbstractContentPanel<BookDeinfo> {
+public class BookDeinfoContentPanel2 extends AbstractContentPanel<BookDeinfo> {
 	//////텍스트필드
 	private JTextField tf_bok1;
 	private JTextField tf_bok2;
@@ -37,7 +37,7 @@ public class BookDeinfoContentPanel extends AbstractContentPanel<BookDeinfo> {
 	private BookDeinfoService service;
 	private String imgPath = System.getProperty("user.dir") + File.separator + "images" + File.separator;
 	
-	public BookDeinfoContentPanel() {
+	public BookDeinfoContentPanel2() {
 		initialize();
 		
 	}
@@ -101,6 +101,9 @@ public class BookDeinfoContentPanel extends AbstractContentPanel<BookDeinfo> {
 		JPanel panel_2 = new JPanel();
 		panel_1.add(panel_2, BorderLayout.SOUTH);
 		
+		JButton btnNewButton = new JButton("\uB85C\uADF8\uC544\uC6C3");
+		panel_2.add(btnNewButton);
+		
 		JLabel lblNewLabel_3 = new JLabel("admin \uD68C\uC6D0\uB2D8 \uC548\uB155\uD558\uC138\uC694.");
 		panel_2.add(lblNewLabel_3);
 		
@@ -112,9 +115,6 @@ public class BookDeinfoContentPanel extends AbstractContentPanel<BookDeinfo> {
 		
 		JLabel lblNewLabel_2 = new JLabel("              ");
 		panel_2.add(lblNewLabel_2);
-		
-		JButton btnNewButton = new JButton("\uB85C\uADF8\uC544\uC6C3");
-		panel_2.add(btnNewButton);
 		
 		JButton btnNewButton_2 = new JButton("\uB3C4\uC6C0\uB9D0");
 		panel_2.add(btnNewButton_2);
